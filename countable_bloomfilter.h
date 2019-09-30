@@ -8,6 +8,8 @@ struct BloomFilter {
 
 struct BloomFilter* bloomfilter_create (unsigned int size);
 
+void bloomfilter_destroy (struct BloomFilter *bf);
+
 void bloomfilter_add (struct BloomFilter *bf, const char *key);
 
 int bloomfilter_remove (struct BloomFilter *bf, const char *key);

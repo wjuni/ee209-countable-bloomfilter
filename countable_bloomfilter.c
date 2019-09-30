@@ -31,6 +31,9 @@
  *
  * */
 
+/**
+ * Allocate a bloom filter whose array size is 'size'. Returns the pointer of new BloomFilter structure.
+ */
 struct BloomFilter* bloomfilter_create (unsigned int size) {
   struct BloomFilter* bf;
   char *array;
@@ -53,6 +56,18 @@ struct BloomFilter* bloomfilter_create (unsigned int size) {
   /* ============================== */
 }
 
+/**
+ * Destroy a bloom filter.
+ */
+void bloomfilter_destroy (struct BloomFilter *bf) {
+  assert(bf);
+  free(bf->arr);
+  free(bf);
+}
+
+/**
+ * Add a key into the bloom filter.
+ */
 void bloomfilter_add (struct BloomFilter *bf, const char *key) {
   assert(bf && bf->arr);
   if (!key) {
@@ -73,6 +88,9 @@ void bloomfilter_add (struct BloomFilter *bf, const char *key) {
 
 }
 
+/**
+ * Remove a key from the bloom filter. Returns 0 if failed to remove. Returns 1 if successfully removed.
+ */
 int bloomfilter_remove (struct BloomFilter *bf, const char *key) {
   assert(bf && bf->arr);
   if(!bloomfilter_check(bf, key)) {
@@ -93,6 +111,9 @@ int bloomfilter_remove (struct BloomFilter *bf, const char *key) {
   return 1; 
 }
 
+/**
+ * Returns 1 if key might exist inside the bloom filter. Otherwise return 0.
+ */
 int bloomfilter_check (struct BloomFilter *bf, const char *key) {
   assert(bf && bf->arr);
   
