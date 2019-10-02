@@ -112,7 +112,7 @@ int bloomfilter_remove (struct BloomFilter *bf, const char *key) {
 }
 
 /**
- * Returns 1 if key might exist inside the bloom filter. Otherwise return 0.
+ * Returns the number of keys inside the bloom filter. If not exist, return 0.
  */
 int bloomfilter_check (struct BloomFilter *bf, const char *key) {
   assert(bf && bf->arr);
@@ -122,9 +122,12 @@ int bloomfilter_check (struct BloomFilter *bf, const char *key) {
 
   /* Fill in the Blank */
   /* ============================== */
+ 
+ uint32_t num1 = ___BLANK___;
+ uint32_t num2 = ___BLANK___;
+ uint32_t total_num = ___BLANK___;
   
-  
-  return (     ___BLANK___     );
+  return ( total_num );
   /* ============================== */
 
 }

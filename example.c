@@ -14,9 +14,9 @@ int main() {
 
   // Check elements
   printf("> Check elements.\n");
-  printf("Does 'Hello' exist in bloomfilter? %s\n", bloomfilter_check(bf, "Hello") ? "Maybe" : "No");
-  printf("Does 'Hi' exist in bloomfilter? %s\n", bloomfilter_check(bf, "Hi") ? "Maybe" : "No");
-  printf("Does 'Bye' exist in bloomfilter? %s\n", bloomfilter_check(bf, "Bye") ? "Maybe" : "No");
+  printf("How many 'Hello' in bloomfilter? %d\n", bloomfilter_check(bf, "Hello"));
+  printf("How many 'Hi' in bloomfilter? %d\n", bloomfilter_check(bf, "Hi"));
+  printf("How many 'Bye' in bloomfilter? %d\n", bloomfilter_check(bf, "Bye"));
 
   // Remove one element
   printf("> Remove one element.\n");
@@ -24,9 +24,9 @@ int main() {
 
   // Check elements
   printf("> Check elements.\n");
-  printf("Does 'Hello' exist in bloomfilter? %s\n", bloomfilter_check(bf, "Hello") ? "Maybe" : "No");
-  printf("Does 'Hi' exist in bloomfilter? %s\n", bloomfilter_check(bf, "Hi") ? "Maybe" : "No");
-  printf("Does 'Bye' exist in bloomfilter? %s\n", bloomfilter_check(bf, "Bye") ? "Maybe" : "No");
+  printf("How many 'Hello' in bloomfilter? %d\n", bloomfilter_check(bf, "Hello"));
+  printf("How many 'Hi' in bloomfilter? %d\n", bloomfilter_check(bf, "Hi"));
+  printf("How many 'Bye' in bloomfilter? %d\n", bloomfilter_check(bf, "Bye"));
 
   return 0;
 }
