@@ -10,6 +10,7 @@ int main() {
   // Add two elements
   printf("> Add Two elements.\n");
   bloomfilter_add(bf, "Hello");
+  bloomfilter_add(bf, "Hello");
   bloomfilter_add(bf, "Hi");
 
   // Check elements
